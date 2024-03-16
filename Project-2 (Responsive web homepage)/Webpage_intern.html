@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Homepage Page</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 724px) {
+            .navbar {
+                display: none !important;
+            }
+
+            .ham {
+                display: flex !important;
+            }
+
+            .nav-container ul {
+                display: flex !important;
+                align-items: center !important;
+                flex-direction: column !important;
+            }
+            
+            .width {
+                width: 100vw !important;
+                display: block !important;
+            }
+        }
+
+        body {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        body::before {
+            content: "";
+            background: url('taj-f.jpg') no-repeat center center/cover;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            /* opacity: 0.9; */
+            z-index: -1;
+        }
+
+        .container::before {
+            content: "";
+            opacity: 0.5;
+            background-color: black;
+            height: 68px;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .container {
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 68px;
+            width: 100vw;
+            z-index: 100;
+        }
+
+        #headline {
+            /* border: 2px solid red; */
+            display: block;
+            text-align: center;
+            width: 300px;
+            color: white;
+        }
+
+        .navbar {
+            /* border: 2px solid red; */
+            display: flex;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: space-around;
+            padding-right: 50px;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            padding: 0px 20px 0px 20px;
+
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+        }
+
+        .container-2 {
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .container-2 h2 {
+            font-size: 30px;
+            color: white;
+        }
+
+        #visit-agra {
+            font-size: 45px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #visit-agra span {
+            color: rgb(9, 134, 86);
+        }
+
+        #india-once {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .button a {
+            text-decoration: none;
+        }
+
+        #btn-1 {
+            width: 150px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        #btn-2 {
+            width: 150px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: rgb(9, 134, 86);
+        }
+
+        #btn-1 a {
+            color: black;
+            font-family: conso;
+            font-weight: 550;
+        }
+
+        #btn-2 a {
+            color: white;
+            font-family: conso;
+            font-weight: 550;
+        }
+
+        /* Hamburger styling */
+        .nav-container {
+            position: absolute;
+            top: 50px;
+            height: 100vh;
+            width: 0vw;
+            display: none;
+        }
+
+        .nav-container ul::before {
+            content: "";
+            position: absolute;
+            top: 18px;
+            height: 100vh;
+            background-color: black;
+            opacity: 0.5;
+            width: 100vw;
+        }
+
+        .nav-container ul {
+            position: relative;
+            top: 0px;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .nav-container ul li {
+            list-style: none;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .nav-container ul li a {
+            position: relative;
+            top: 50px;
+            font-size: 30px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .ham {
+            width: 50px;
+            height: 4px;
+            display: block;
+            position: relative;
+            right: 50px;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+
+        .ham span {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            width: 30px;
+            height: 6px;
+            border-radius: 5px;
+        }
+
+        .ham #sp-1 {
+            transform: translateY(-4px);
+        }
+
+        .ham #sp-2 {
+            transform: translateY(9px);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-container" id="nav-id">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+    <header class="container">
+        <h2 id="headline">MERA BHARAT</h2>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="ham" id="ham-id">
+            <span id="sp-1"></span>
+            <span id="sp-2"></span>
+            <span id="sp-3"></span>
+        </div>
+    </header>
+    <div class="container-2">
+        <h2>Welcome to India</h2>
+        <div id="visit-agra">DO COME & VISIT <span>AGRA</span></div>
+        <div id="india-once">India once is not enough</div>
+        <div class="button">
+            <button id="btn-1"><a href="#">LEARN MORE</a></button>
+            <button id="btn-2"><a href="#">SIGNUP HERE</a></button>
+        </div>
+    </div>
+
+    <!-- JavaScript code  -->
+    <script>
+        let a = document.getElementById("ham-id");
+        a.addEventListener("click", () => {
+            let b = document.getElementById("nav-id");
+            b.classList.toggle("width");
+        })
+
+    </script>
+</body>
+
+</html>
